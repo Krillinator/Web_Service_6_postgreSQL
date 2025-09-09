@@ -22,13 +22,6 @@ public class CustomUserService {
     }
 
     public CustomUser createNewUser(CustomUser customUser) {
-        if (
-                customUser.getPassword() == null ||
-                customUser.getUsername() == null
-        ) {
-            throw new IllegalArgumentException();
-        }
-
         log.info("Creating new User with username: {}", customUser.getUsername());
 
         return customUserRepository.save(customUser);

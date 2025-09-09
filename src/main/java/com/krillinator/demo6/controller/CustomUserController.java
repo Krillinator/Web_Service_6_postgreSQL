@@ -3,6 +3,7 @@ package com.krillinator.demo6.controller;
 import com.krillinator.demo6.model.CustomUser;
 import com.krillinator.demo6.repository.CustomUserRepository;
 import com.krillinator.demo6.service.CustomUserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +32,7 @@ public class CustomUserController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<CustomUser> createNewUser(@RequestBody CustomUser customUser) {
+    public ResponseEntity<CustomUser> createNewUser(@Valid @RequestBody CustomUser customUser) {
 
         return ResponseEntity.ok(customUserService.createNewUser(customUser));
     }
