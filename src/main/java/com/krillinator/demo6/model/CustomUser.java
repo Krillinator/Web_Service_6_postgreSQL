@@ -15,6 +15,7 @@ public class CustomUser {
     private String username;
     private String password;
 
+    // This should be deleted later: for demonstration
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true) //orphanRemoval makes sure the task gets removed
     @JsonManagedReference
     private List<Todo> customTask;
